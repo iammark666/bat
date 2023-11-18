@@ -1,0 +1,15 @@
+:: delete the duplicate frame of pcapng file of wireshark
+
+@echo off
+:: catch the file name throwed in the bat scrypt
+set q=%~n1
+
+:: catch the file directory + file throwed in the bat scrypt
+set p=%1
+
+:: catch the file directory throwed in the bat scrypt  
+set pp=%~dp1
+
+start cmd /k "cd C:\Program Files\Wireshark && editcap.exe -d %p% %pp%%q%_delDup.pcapng "
+
+pause
